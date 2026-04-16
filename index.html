@@ -58,8 +58,12 @@
 					rgba(255, 255, 255, 0.015) 40px,
 					rgba(255, 255, 255, 0.015) 41px
 				);
+				pointer-events: none;
 			}
-
+			header > * {
+				position: relative;
+				z-index: 1;
+			}
 			.wordmark {
 				font-family: "DM Serif Display", serif;
 				font-size: 0.85rem;
@@ -366,9 +370,13 @@
 	</head>
 	<body>
 		<header>
-			<p class="wordmark">Emdidi Studio</p>
+			<p class="wordmark">Emdidi Studio · MTip</p>
 			<h1>Privacy Policy</h1>
 			<p class="meta">Last Updated — April 15, 2026</p>
+
+			<div>
+				<a href="toc.html" target="_self">Terms of use</a>
+			</div>
 		</header>
 
 		<main class="container">

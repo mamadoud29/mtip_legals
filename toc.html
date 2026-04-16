@@ -1,599 +1,1186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Use — MTip by Emdidi Studio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #0f0f0f;
-    --paper: #f5f2ec;
-    --accent: #c84b31;
-    --muted: #8a8276;
-    --rule: #d5d0c8;
-    --highlight: #fff8e7;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--paper);
-    color: var(--ink);
-    font-size: 16px;
-    line-height: 1.75;
-  }
-
-  /* ── HEADER ── */
-  header {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 3.5rem 2rem 2.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      45deg, transparent, transparent 40px,
-      rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 41px
-    );
-  }
-
-  .wordmark {
-    font-family: 'DM Serif Display', serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-  }
-
-  header h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 400;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-  }
-
-  .meta {
-    font-size: 0.8rem;
-    color: rgba(245,242,236,0.45);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  /* ── LAYOUT ── */
-  .container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  /* ── AGREEMENT BANNER ── */
-  .agreement-banner {
-    background: var(--accent);
-    color: white;
-    padding: 1.2rem 1.8rem;
-    margin: 2.5rem 0;
-    font-size: 0.85rem;
-    font-weight: 400;
-    line-height: 1.6;
-    border-left: 4px solid rgba(0,0,0,0.2);
-  }
-
-  .agreement-banner strong { font-weight: 500; }
-
-  /* ── TOC ── */
-  .toc-block {
-    background: var(--ink);
-    color: var(--paper);
-    margin: 2rem 0;
-    padding: 2rem 2.5rem;
-    border-left: 4px solid var(--accent);
-  }
-
-  .toc-block h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 1.2rem;
-    color: var(--accent);
-  }
-
-  .toc-list {
-    list-style: none;
-    columns: 2;
-    column-gap: 2rem;
-  }
-
-  @media (max-width: 600px) { .toc-list { columns: 1; } }
-
-  .toc-list li { margin-bottom: 0.4rem; break-inside: avoid; }
-
-  .toc-list a {
-    color: rgba(245,242,236,0.7);
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 300;
-    transition: color 0.15s;
-    display: flex;
-    gap: 0.5rem;
-    align-items: baseline;
-  }
-
-  .toc-list a:hover { color: var(--accent); }
-
-  .toc-list a .num {
-    color: var(--accent);
-    font-size: 0.7rem;
-    font-weight: 500;
-    min-width: 1.4rem;
-  }
-
-  /* ── SECTIONS ── */
-  .section {
-    padding: 3rem 0 1rem;
-    border-top: 1px solid var(--rule);
-  }
-
-  .section-header {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    margin-bottom: 1.4rem;
-  }
-
-  .section-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 3rem;
-    line-height: 1;
-    color: var(--rule);
-    min-width: 2.5rem;
-    user-select: none;
-  }
-
-  .section h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.45rem;
-    font-weight: 400;
-    line-height: 1.2;
-    padding-top: 0.5rem;
-  }
-
-  .callout {
-    background: var(--highlight);
-    border-left: 3px solid var(--accent);
-    padding: 0.75rem 1rem;
-    font-size: 0.85rem;
-    color: var(--muted);
-    font-style: italic;
-    margin-bottom: 1.5rem;
-  }
-
-  /* Legal all-caps blocks */
-  .legal-caps {
-    font-size: 0.8rem;
-    font-weight: 400;
-    line-height: 1.7;
-    color: #444;
-    background: rgba(0,0,0,0.03);
-    border: 1px solid var(--rule);
-    padding: 1.2rem 1.4rem;
-    margin-bottom: 1rem;
-  }
-
-  /* ── PROSE ── */
-  p { margin-bottom: 1rem; font-weight: 300; }
-
-  h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.05rem;
-    font-weight: 400;
-    margin: 1.8rem 0 0.6rem;
-  }
-
-  ul, ol {
-    padding-left: 1.4rem;
-    margin-bottom: 1rem;
-  }
-
-  li {
-    margin-bottom: 0.45rem;
-    font-weight: 300;
-    font-size: 0.95rem;
-  }
-
-  a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
-  strong { font-weight: 500; }
-  em { font-style: italic; }
-
-  /* ── PLACEHOLDER ── */
-  .placeholder {
-    display: inline-block;
-    background: #ffe9e5;
-    color: var(--accent);
-    border: 1px dashed var(--accent);
-    padding: 0 0.35rem;
-    border-radius: 2px;
-    font-size: 0.8rem;
-    font-style: italic;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    margin-top: 5rem;
-    background: var(--ink);
-    color: rgba(245,242,236,0.5);
-    text-align: center;
-    padding: 2.5rem;
-    font-size: 0.78rem;
-  }
-
-  footer a { color: var(--accent); }
-
-  footer .studio {
-    font-family: 'DM Serif Display', serif;
-    color: var(--paper);
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  /* ── BACK TO TOP ── */
-  .back-top {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 2.4rem;
-    height: 2.4rem;
-    background: var(--accent);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.2s;
-    z-index: 99;
-  }
-
-  .back-top.visible { opacity: 1; }
-</style>
-</head>
-<body>
-
-<header>
-  <p class="wordmark">Emdidi Studio · MTip</p>
-  <h1>Terms of Use</h1>
-  <p class="meta">Last Updated — April 15, 2026</p>
-</header>
-
-<main class="container">
-
-  <!-- AGREEMENT INTRO -->
-  <div class="agreement-banner">
-    <strong>AGREEMENT TO OUR LEGAL TERMS</strong><br>
-    We are <strong>Emdidi Studio</strong> ("Company," "we," "us," "our"). We operate the <strong>MTip</strong> mobile application and any other related products or services that refer or link to these Legal Terms (collectively, the "Services"). You can contact us at <a href="mailto:emdidistudio@gmail.com" style="color:white;">emdidistudio@gmail.com</a>.
-  </div>
-
-  <p>These Legal Terms constitute a legally binding agreement between you and Emdidi Studio regarding your access to and use of the Services. By accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. <strong>IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.</strong></p>
-
-  <p>We reserve the right to make changes to these Legal Terms at any time. We will alert you by updating the "Last updated" date. Your continued use of the Services after any revision constitutes acceptance of the updated terms. We recommend that you print a copy of these Legal Terms for your records.</p>
-
-  <!-- TABLE OF CONTENTS -->
-  <div class="toc-block">
-    <h2>Table of Contents</h2>
-    <ol class="toc-list">
-      <li><a href="#s1"><span class="num">1.</span> Our Services</a></li>
-      <li><a href="#s2"><span class="num">2.</span> Intellectual Property Rights</a></li>
-      <li><a href="#s3"><span class="num">3.</span> User Representations</a></li>
-      <li><a href="#s4"><span class="num">4.</span> Prohibited Activities</a></li>
-      <li><a href="#s5"><span class="num">5.</span> User Generated Contributions</a></li>
-      <li><a href="#s6"><span class="num">6.</span> Contribution License</a></li>
-      <li><a href="#s7"><span class="num">7.</span> Services Management</a></li>
-      <li><a href="#s8"><span class="num">8.</span> Term and Termination</a></li>
-      <li><a href="#s9"><span class="num">9.</span> Modifications and Interruptions</a></li>
-      <li><a href="#s10"><span class="num">10.</span> Governing Law</a></li>
-      <li><a href="#s11"><span class="num">11.</span> Dispute Resolution</a></li>
-      <li><a href="#s12"><span class="num">12.</span> Corrections</a></li>
-      <li><a href="#s13"><span class="num">13.</span> Disclaimer</a></li>
-      <li><a href="#s14"><span class="num">14.</span> Limitations of Liability</a></li>
-      <li><a href="#s15"><span class="num">15.</span> Indemnification</a></li>
-      <li><a href="#s16"><span class="num">16.</span> User Data</a></li>
-      <li><a href="#s17"><span class="num">17.</span> Electronic Communications</a></li>
-      <li><a href="#s18"><span class="num">18.</span> Miscellaneous</a></li>
-      <li><a href="#s19"><span class="num">19.</span> Contact Us</a></li>
-    </ol>
-  </div>
-
-  <!-- S1 -->
-  <div class="section" id="s1">
-    <div class="section-header">
-      <span class="section-num">1</span>
-      <h2>Our Services</h2>
-    </div>
-    <p>The information provided when using the Services is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation, or which would subject us to any registration requirement within such jurisdiction or country. Those who choose to access the Services from other locations do so on their own initiative and are solely responsible for compliance with local laws.</p>
-  </div>
-
-  <!-- S2 -->
-  <div class="section" id="s2">
-    <div class="section-header">
-      <span class="section-num">2</span>
-      <h2>Intellectual Property Rights</h2>
-    </div>
-
-    <h3>Our intellectual property</h3>
-    <p>We are the owner or licensee of all intellectual property rights in our Services, including all source code, databases, functionality, software, designs, audio, video, text, photographs, and graphics (collectively, the "Content"), as well as the trademarks, service marks, and logos ("Marks"). Our Content and Marks are protected by copyright and trademark laws worldwide. The Content and Marks are provided "AS IS" for your personal, non-commercial use or internal business purpose only.</p>
-
-    <h3>Your use of our Services</h3>
-    <p>Subject to compliance with these Legal Terms, we grant you a non-exclusive, non-transferable, revocable license to:</p>
-    <ul>
-      <li>Access the Services; and</li>
-      <li>Download or print a copy of any portion of the Content to which you have properly gained access,</li>
-    </ul>
-    <p>solely for your personal, non-commercial use or internal business purpose.</p>
-    <p>No part of the Services, Content, or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose without our express prior written permission. Any breach of these Intellectual Property Rights will constitute a material breach of our Legal Terms and your right to use our Services will terminate immediately.</p>
-
-    <h3>Your submissions</h3>
-    <p>By sending us any question, comment, suggestion, idea, feedback, or other information about the Services ("Submissions"), you agree to assign to us all intellectual property rights in such Submission. You confirm that:</p>
-    <ul>
-      <li>You will not post any Submission that is illegal, harassing, hateful, harmful, defamatory, obscene, bullying, abusive, discriminatory, threatening, sexually explicit, false, inaccurate, deceitful, or misleading;</li>
-      <li>To the extent permissible by law, you waive any moral rights to any such Submission;</li>
-      <li>Your Submissions are original to you or you have the necessary rights and licenses to submit them;</li>
-      <li>Your Submissions do not constitute confidential information.</li>
-    </ul>
-    <p>You are solely responsible for your Submissions and agree to reimburse us for any losses we may suffer because of your breach of this section, any third party's intellectual property rights, or applicable law.</p>
-  </div>
-
-  <!-- S3 -->
-  <div class="section" id="s3">
-    <div class="section-header">
-      <span class="section-num">3</span>
-      <h2>User Representations</h2>
-    </div>
-    <p>By using the Services, you represent and warrant that:</p>
-    <ol>
-      <li>You have the legal capacity and agree to comply with these Legal Terms;</li>
-      <li>You are not a minor in the jurisdiction in which you reside;</li>
-      <li>You will not access the Services through automated or non-human means (bot, script, etc.);</li>
-      <li>You will not use the Services for any illegal or unauthorized purpose; and</li>
-      <li>Your use of the Services will not violate any applicable law or regulation.</li>
-    </ol>
-    <p>If you provide any information that is untrue, inaccurate, not current, or incomplete, we have the right to suspend or terminate your account and refuse any current or future use of the Services.</p>
-  </div>
-
-  <!-- S4 -->
-  <div class="section" id="s4">
-    <div class="section-header">
-      <span class="section-num">4</span>
-      <h2>Prohibited Activities</h2>
-    </div>
-    <p>You may not access or use the Services for any purpose other than that for which we make the Services available. As a user, you agree not to:</p>
-    <ul>
-      <li>Systematically retrieve data or content from the Services to create a collection, compilation, database, or directory without written permission;</li>
-      <li>Trick, defraud, or mislead us and other users, especially to learn sensitive account information such as passwords;</li>
-      <li>Circumvent, disable, or otherwise interfere with security-related features of the Services;</li>
-      <li>Disparage, tarnish, or otherwise harm us and/or the Services;</li>
-      <li>Use any information obtained from the Services to harass, abuse, or harm another person;</li>
-      <li>Make improper use of our support services or submit false reports of abuse or misconduct;</li>
-      <li>Use the Services in a manner inconsistent with any applicable laws or regulations;</li>
-      <li>Engage in unauthorized framing of or linking to the Services;</li>
-      <li>Upload or transmit viruses, Trojan horses, spam, or other harmful material;</li>
-      <li>Engage in any automated use of the system, including data mining, robots, or similar tools;</li>
-      <li>Delete copyright or other proprietary rights notices from any Content;</li>
-      <li>Attempt to impersonate another user or person;</li>
-      <li>Upload or transmit spyware or passive collection mechanisms;</li>
-      <li>Interfere with, disrupt, or create an undue burden on the Services or connected networks;</li>
-      <li>Harass, annoy, intimidate, or threaten any of our employees or agents;</li>
-      <li>Attempt to bypass any measures designed to prevent or restrict access to the Services;</li>
-      <li>Copy or adapt the Services' software, including Flash, PHP, HTML, JavaScript, or other code;</li>
-      <li>Decipher, decompile, disassemble, or reverse engineer any software making up a part of the Services (except as permitted by applicable law);</li>
-      <li>Use or launch any unauthorized automated system or script;</li>
-      <li>Use a buying agent or purchasing agent to make purchases on the Services;</li>
-      <li>Make any unauthorized use of the Services, including collecting usernames or email addresses for unsolicited email;</li>
-      <li>Use the Services as part of any effort to compete with us or for any revenue-generating or commercial enterprise.</li>
-    </ul>
-  </div>
-
-  <!-- S5 -->
-  <div class="section" id="s5">
-    <div class="section-header">
-      <span class="section-num">5</span>
-      <h2>User Generated Contributions</h2>
-    </div>
-    <p>The Services do not currently offer users the ability to submit or post public content. We may, in the future, provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the Services, including text, writings, video, audio, photographs, graphics, comments, suggestions, or personal information (collectively, "Contributions"). Any future Contributions may be viewable by other users and through third-party websites.</p>
-  </div>
-
-  <!-- S6 -->
-  <div class="section" id="s6">
-    <div class="section-header">
-      <span class="section-num">6</span>
-      <h2>Contribution License</h2>
-    </div>
-    <p>You and the Services agree that we may access, store, process, and use any information and personal data that you provide and your choices (including settings).</p>
-    <p>By submitting suggestions or other feedback regarding the Services, you agree that we can use and share such feedback for any purpose without compensation to you.</p>
-    <p>We do not assert any ownership over your Contributions. You retain full ownership of all your Contributions and any associated intellectual property rights. We are not liable for any statements or representations in your Contributions. You are solely responsible for your Contributions and agree to exonerate us from any responsibility and to refrain from any legal action against us regarding your Contributions.</p>
-  </div>
-
-  <!-- S7 -->
-  <div class="section" id="s7">
-    <div class="section-header">
-      <span class="section-num">7</span>
-      <h2>Services Management</h2>
-    </div>
-    <p>We reserve the right, but not the obligation, to:</p>
-    <ol>
-      <li>Monitor the Services for violations of these Legal Terms;</li>
-      <li>Take appropriate legal action against anyone who violates the law or these Legal Terms, including reporting such user to law enforcement;</li>
-      <li>In our sole discretion, refuse, restrict access to, limit the availability of, or disable any of your Contributions or any portion thereof;</li>
-      <li>Remove from the Services or disable all files and content that are excessive in size or burdensome to our systems; and</li>
-      <li>Otherwise manage the Services in a manner designed to protect our rights and property and to facilitate the proper functioning of the Services.</li>
-    </ol>
-  </div>
-
-  <!-- S8 -->
-  <div class="section" id="s8">
-    <div class="section-header">
-      <span class="section-num">8</span>
-      <h2>Term and Termination</h2>
-    </div>
-    <p>These Legal Terms shall remain in full force and effect while you use the Services.</p>
-    <div class="legal-caps">WITHOUT LIMITING ANY OTHER PROVISION OF THESE LEGAL TERMS, WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE SERVICES (INCLUDING BLOCKING CERTAIN IP ADDRESSES), TO ANY PERSON FOR ANY REASON OR FOR NO REASON, INCLUDING WITHOUT LIMITATION FOR BREACH OF ANY REPRESENTATION, WARRANTY, OR COVENANT CONTAINED IN THESE LEGAL TERMS OR OF ANY APPLICABLE LAW OR REGULATION. WE MAY TERMINATE YOUR USE OR PARTICIPATION IN THE SERVICES OR DELETE ANY CONTENT OR INFORMATION THAT YOU POSTED AT ANY TIME, WITHOUT WARNING, IN OUR SOLE DISCRETION.</div>
-    <p>If we terminate or suspend your account for any reason, you are prohibited from registering and creating a new account under your name, a fake or borrowed name, or the name of any third party. We also reserve the right to take appropriate legal action, including pursuing civil, criminal, and injunctive redress.</p>
-  </div>
-
-  <!-- S9 -->
-  <div class="section" id="s9">
-    <div class="section-header">
-      <span class="section-num">9</span>
-      <h2>Modifications and Interruptions</h2>
-    </div>
-    <p>We reserve the right to change, modify, or remove the contents of the Services at any time or for any reason at our sole discretion without notice. We will not be liable to you or any third party for any modification, price change, suspension, or discontinuance of the Services.</p>
-    <p>We cannot guarantee the Services will be available at all times. We may experience hardware, software, or other problems or need to perform maintenance, resulting in interruptions, delays, or errors. Nothing in these Legal Terms will be construed to obligate us to maintain and support the Services or to supply any corrections, updates, or releases in connection therewith.</p>
-  </div>
-
-  <!-- S10 -->
-  <div class="section" id="s10">
-    <div class="section-header">
-      <span class="section-num">10</span>
-      <h2>Governing Law</h2>
-    </div>
-    <p>These Legal Terms shall be governed by and defined following the laws of <span class="placeholder">jurisdiction to be specified</span>. The courts of <span class="placeholder">jurisdiction to be specified</span> shall have exclusive jurisdiction to resolve any dispute arising in connection with these Legal Terms.</p>
-  </div>
-
-  <!-- S11 -->
-  <div class="section" id="s11">
-    <div class="section-header">
-      <span class="section-num">11</span>
-      <h2>Dispute Resolution</h2>
-    </div>
-
-    <h3>Informal Negotiations</h3>
-    <p>The Parties agree to first attempt to negotiate any Dispute informally for at least <span class="placeholder">___ days</span> before initiating arbitration. Such informal negotiations commence upon written notice from one Party to the other Party.</p>
-
-    <h3>Binding Arbitration</h3>
-    <p>Any dispute arising out of or in connection with these Legal Terms shall be referred to and finally resolved by the International Commercial Arbitration Court under the European Arbitration Chamber (Belgium, Brussels, Avenue Louise, 146) according to the Rules of this ICAC. The number of arbitrators shall be <span class="placeholder">to be specified</span>. The seat of arbitration shall be <span class="placeholder">to be specified</span>. The language of the proceedings shall be <span class="placeholder">to be specified</span>. The governing law shall be substantive law of <span class="placeholder">to be specified</span>.</p>
-
-    <h3>Restrictions</h3>
-    <p>Any arbitration shall be limited to the Dispute between the Parties individually. To the full extent permitted by law: (a) no arbitration shall be joined with any other proceeding; (b) there is no right or authority for any Dispute to be arbitrated on a class-action basis; and (c) there is no right or authority for any Dispute to be brought in a purported representative capacity on behalf of the general public or any other persons.</p>
-
-    <h3>Exceptions to Informal Negotiations and Arbitration</h3>
-    <p>The following Disputes are not subject to the above provisions: (a) any Disputes seeking to enforce or protect intellectual property rights; (b) any Dispute related to allegations of theft, piracy, invasion of privacy, or unauthorized use; and (c) any claim for injunctive relief. If this provision is found to be illegal or unenforceable, the relevant Dispute shall be decided by a court of competent jurisdiction, and the Parties agree to submit to the personal jurisdiction of that court.</p>
-  </div>
-
-  <!-- S12 -->
-  <div class="section" id="s12">
-    <div class="section-header">
-      <span class="section-num">12</span>
-      <h2>Corrections</h2>
-    </div>
-    <p>There may be information on the Services that contains typographical errors, inaccuracies, or omissions, including descriptions, pricing, availability, and various other information. We reserve the right to correct any errors, inaccuracies, or omissions and to change or update the information on the Services at any time, without prior notice.</p>
-  </div>
-
-  <!-- S13 -->
-  <div class="section" id="s13">
-    <div class="section-header">
-      <span class="section-num">13</span>
-      <h2>Disclaimer</h2>
-    </div>
-    <div class="legal-caps">THE SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SERVICES AND YOUR USE THEREOF, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THE SERVICES' CONTENT OR THE CONTENT OF ANY WEBSITES OR MOBILE APPLICATIONS LINKED TO THE SERVICES AND WE WILL ASSUME NO LIABILITY OR RESPONSIBILITY FOR ANY (1) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS, (2) PERSONAL INJURY OR PROPERTY DAMAGE RESULTING FROM YOUR ACCESS TO AND USE OF THE SERVICES, (3) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (4) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE SERVICES, (5) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH THE SERVICES BY ANY THIRD PARTY, AND/OR (6) ANY ERRORS OR OMISSIONS IN ANY CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE SERVICES. AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE.</div>
-  </div>
-
-  <!-- S14 -->
-  <div class="section" id="s14">
-    <div class="section-header">
-      <span class="section-num">14</span>
-      <h2>Limitations of Liability</h2>
-    </div>
-    <div class="legal-caps">IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED HEREIN, OUR LIABILITY TO YOU FOR ANY CAUSE WHATSOEVER WILL AT ALL TIMES BE LIMITED TO THE LESSER OF THE AMOUNT PAID, IF ANY, BY YOU TO US. CERTAIN US STATE LAWS AND INTERNATIONAL LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES. IF THESE LAWS APPLY TO YOU, SOME OR ALL OF THE ABOVE DISCLAIMERS OR LIMITATIONS MAY NOT APPLY TO YOU, AND YOU MAY HAVE ADDITIONAL RIGHTS.</div>
-  </div>
-
-  <!-- S15 -->
-  <div class="section" id="s15">
-    <div class="section-header">
-      <span class="section-num">15</span>
-      <h2>Indemnification</h2>
-    </div>
-    <p>You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys' fees and expenses, made by any third party due to or arising out of:</p>
-    <ol>
-      <li>Use of the Services;</li>
-      <li>Breach of these Legal Terms;</li>
-      <li>Any breach of your representations and warranties set forth in these Legal Terms;</li>
-      <li>Your violation of the rights of a third party, including intellectual property rights; or</li>
-      <li>Any overt harmful act toward any other user of the Services with whom you connected via the Services.</li>
-    </ol>
-    <p>Notwithstanding the foregoing, we reserve the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us, and you agree to cooperate, at your expense, with our defense of such claims.</p>
-  </div>
-
-  <!-- S16 -->
-  <div class="section" id="s16">
-    <div class="section-header">
-      <span class="section-num">16</span>
-      <h2>User Data</h2>
-    </div>
-    <p>We will maintain certain data that you transmit to the Services for the purpose of managing the performance of the Services, as well as data relating to your use of the Services. Although we perform regular routine backups, you are solely responsible for all data that you transmit or that relates to any activity you have undertaken using the Services. You agree that we shall have no liability to you for any loss or corruption of any such data, and you hereby waive any right of action against us arising from any such loss or corruption.</p>
-  </div>
-
-  <!-- S17 -->
-  <div class="section" id="s17">
-    <div class="section-header">
-      <span class="section-num">17</span>
-      <h2>Electronic Communications, Transactions, and Signatures</h2>
-    </div>
-    <p>Visiting the Services, sending us emails, and completing online forms constitute electronic communications. You consent to receive electronic communications, and you agree that all agreements, notices, disclosures, and other communications we provide to you electronically satisfy any legal requirement that such communication be in writing.</p>
-    <div class="legal-caps">YOU HEREBY AGREE TO THE USE OF ELECTRONIC SIGNATURES, CONTRACTS, ORDERS, AND OTHER RECORDS, AND TO ELECTRONIC DELIVERY OF NOTICES, POLICIES, AND RECORDS OF TRANSACTIONS INITIATED OR COMPLETED BY US OR VIA THE SERVICES. YOU HEREBY WAIVE ANY RIGHTS OR REQUIREMENTS UNDER ANY STATUTES, REGULATIONS, RULES, ORDINANCES, OR OTHER LAWS IN ANY JURISDICTION WHICH REQUIRE AN ORIGINAL SIGNATURE OR DELIVERY OR RETENTION OF NON-ELECTRONIC RECORDS, OR TO PAYMENTS OR THE GRANTING OF CREDITS BY ANY MEANS OTHER THAN ELECTRONIC MEANS.</div>
-  </div>
-
-  <!-- S18 -->
-  <div class="section" id="s18">
-    <div class="section-header">
-      <span class="section-num">18</span>
-      <h2>Miscellaneous</h2>
-    </div>
-    <p>These Legal Terms and any policies or operating rules posted by us on the Services constitute the entire agreement and understanding between you and us. Our failure to exercise or enforce any right or provision of these Legal Terms shall not operate as a waiver of such right or provision. These Legal Terms operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time.</p>
-    <p>We shall not be responsible or liable for any loss, damage, delay, or failure to act caused by any cause beyond our reasonable control. If any provision of these Legal Terms is determined to be unlawful, void, or unenforceable, that provision is deemed severable and does not affect the validity and enforceability of any remaining provisions.</p>
-    <p>There is no joint venture, partnership, employment, or agency relationship created between you and us as a result of these Legal Terms or use of the Services. You agree that these Legal Terms will not be construed against us by virtue of having drafted them. You hereby waive any defenses based on the electronic form of these Legal Terms and the lack of signing by the parties.</p>
-  </div>
-
-  <!-- S19 -->
-  <div class="section" id="s19">
-    <div class="section-header">
-      <span class="section-num">19</span>
-      <h2>Contact Us</h2>
-    </div>
-    <p>To resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at:</p>
-    <div style="margin-top:1rem; padding: 1rem 1.5rem; background: var(--highlight); border-left: 3px solid var(--accent);">
-      <strong>Emdidi Studio</strong><br>
-      <a href="mailto:emdidistudio@gmail.com">emdidistudio@gmail.com</a>
-    </div>
-  </div>
-
-</main>
-
-<footer>
-  <p class="studio">Emdidi Studio</p>
-  <p>Questions? <a href="mailto:emdidistudio@gmail.com">emdidistudio@gmail.com</a></p>
-  <p style="margin-top:1rem; font-size:0.72rem; opacity:0.4;">Terms of Use · MTip · Last Updated April 15, 2026</p>
-</footer>
-
-<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
-
-<script>
-  const btn = document.getElementById('backTop');
-  window.addEventListener('scroll', () => {
-    btn.classList.toggle('visible', window.scrollY > 400);
-  });
-</script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Terms of Use — MTip by Emdidi Studio</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			:root {
+				--ink: #0f0f0f;
+				--paper: #f5f2ec;
+				--accent: #c84b31;
+				--muted: #8a8276;
+				--rule: #d5d0c8;
+				--highlight: #fff8e7;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			html {
+				scroll-behavior: smooth;
+			}
+
+			body {
+				font-family: "DM Sans", sans-serif;
+				background: var(--paper);
+				color: var(--ink);
+				font-size: 16px;
+				line-height: 1.75;
+			}
+
+			/* ── HEADER ── */
+			header {
+				background: var(--ink);
+				color: var(--paper);
+				padding: 3.5rem 2rem 2.5rem;
+				text-align: center;
+				position: relative;
+				overflow: hidden;
+			}
+
+			header::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background: repeating-linear-gradient(
+					45deg,
+					transparent,
+					transparent 40px,
+					rgba(255, 255, 255, 0.015) 40px,
+					rgba(255, 255, 255, 0.015) 41px
+				);
+				pointer-events: none;
+			}
+
+			header > * {
+				position: relative;
+				z-index: 1;
+			}
+			.wordmark {
+				font-family: "DM Serif Display", serif;
+				font-size: 0.85rem;
+				letter-spacing: 0.25em;
+				text-transform: uppercase;
+				color: var(--accent);
+				margin-bottom: 1rem;
+			}
+
+			header h1 {
+				font-family: "DM Serif Display", serif;
+				font-size: clamp(2.2rem, 5vw, 3.5rem);
+				font-weight: 400;
+				line-height: 1.1;
+				margin-bottom: 1rem;
+			}
+
+			.meta {
+				font-size: 0.8rem;
+				color: rgba(245, 242, 236, 0.45);
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+			}
+
+			/* ── LAYOUT ── */
+			.container {
+				max-width: 860px;
+				margin: 0 auto;
+				padding: 0 2rem;
+			}
+
+			/* ── AGREEMENT BANNER ── */
+			.agreement-banner {
+				background: var(--accent);
+				color: white;
+				padding: 1.2rem 1.8rem;
+				margin: 2.5rem 0;
+				font-size: 0.85rem;
+				font-weight: 400;
+				line-height: 1.6;
+				border-left: 4px solid rgba(0, 0, 0, 0.2);
+			}
+
+			.agreement-banner strong {
+				font-weight: 500;
+			}
+
+			/* ── TOC ── */
+			.toc-block {
+				background: var(--ink);
+				color: var(--paper);
+				margin: 2rem 0;
+				padding: 2rem 2.5rem;
+				border-left: 4px solid var(--accent);
+			}
+
+			.toc-block h2 {
+				font-family: "DM Serif Display", serif;
+				font-size: 0.75rem;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+				margin-bottom: 1.2rem;
+				color: var(--accent);
+			}
+
+			.toc-list {
+				list-style: none;
+				columns: 2;
+				column-gap: 2rem;
+			}
+
+			@media (max-width: 600px) {
+				.toc-list {
+					columns: 1;
+				}
+			}
+
+			.toc-list li {
+				margin-bottom: 0.4rem;
+				break-inside: avoid;
+			}
+
+			.toc-list a {
+				color: rgba(245, 242, 236, 0.7);
+				text-decoration: none;
+				font-size: 0.82rem;
+				font-weight: 300;
+				transition: color 0.15s;
+				display: flex;
+				gap: 0.5rem;
+				align-items: baseline;
+			}
+
+			.toc-list a:hover {
+				color: var(--accent);
+			}
+
+			.toc-list a .num {
+				color: var(--accent);
+				font-size: 0.7rem;
+				font-weight: 500;
+				min-width: 1.4rem;
+			}
+
+			/* ── SECTIONS ── */
+			.section {
+				padding: 3rem 0 1rem;
+				border-top: 1px solid var(--rule);
+			}
+
+			.section-header {
+				display: flex;
+				gap: 1rem;
+				align-items: flex-start;
+				margin-bottom: 1.4rem;
+			}
+
+			.section-num {
+				font-family: "DM Serif Display", serif;
+				font-size: 3rem;
+				line-height: 1;
+				color: var(--rule);
+				min-width: 2.5rem;
+				user-select: none;
+			}
+
+			.section h2 {
+				font-family: "DM Serif Display", serif;
+				font-size: 1.45rem;
+				font-weight: 400;
+				line-height: 1.2;
+				padding-top: 0.5rem;
+			}
+
+			.callout {
+				background: var(--highlight);
+				border-left: 3px solid var(--accent);
+				padding: 0.75rem 1rem;
+				font-size: 0.85rem;
+				color: var(--muted);
+				font-style: italic;
+				margin-bottom: 1.5rem;
+			}
+
+			/* Legal all-caps blocks */
+			.legal-caps {
+				font-size: 0.8rem;
+				font-weight: 400;
+				line-height: 1.7;
+				color: #444;
+				background: rgba(0, 0, 0, 0.03);
+				border: 1px solid var(--rule);
+				padding: 1.2rem 1.4rem;
+				margin-bottom: 1rem;
+			}
+
+			/* ── PROSE ── */
+			p {
+				margin-bottom: 1rem;
+				font-weight: 300;
+			}
+
+			h3 {
+				font-family: "DM Serif Display", serif;
+				font-size: 1.05rem;
+				font-weight: 400;
+				margin: 1.8rem 0 0.6rem;
+			}
+
+			ul,
+			ol {
+				padding-left: 1.4rem;
+				margin-bottom: 1rem;
+			}
+
+			li {
+				margin-bottom: 0.45rem;
+				font-weight: 300;
+				font-size: 0.95rem;
+			}
+
+			a {
+				color: var(--accent);
+				text-decoration: underline;
+				text-underline-offset: 2px;
+			}
+			strong {
+				font-weight: 500;
+			}
+			em {
+				font-style: italic;
+			}
+
+			/* ── PLACEHOLDER ── */
+			.placeholder {
+				display: inline-block;
+				background: #ffe9e5;
+				color: var(--accent);
+				border: 1px dashed var(--accent);
+				padding: 0 0.35rem;
+				border-radius: 2px;
+				font-size: 0.8rem;
+				font-style: italic;
+			}
+
+			/* ── FOOTER ── */
+			footer {
+				margin-top: 5rem;
+				background: var(--ink);
+				color: rgba(245, 242, 236, 0.5);
+				text-align: center;
+				padding: 2.5rem;
+				font-size: 0.78rem;
+			}
+
+			footer a {
+				color: var(--accent);
+			}
+
+			footer .studio {
+				font-family: "DM Serif Display", serif;
+				color: var(--paper);
+				font-size: 1.1rem;
+				margin-bottom: 0.5rem;
+			}
+
+			/* ── BACK TO TOP ── */
+			.back-top {
+				position: fixed;
+				bottom: 1.5rem;
+				right: 1.5rem;
+				width: 2.4rem;
+				height: 2.4rem;
+				background: var(--accent);
+				color: white;
+				border: none;
+				cursor: pointer;
+				font-size: 1rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				opacity: 0;
+				transition: opacity 0.2s;
+				z-index: 99;
+			}
+
+			.back-top.visible {
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<p class="wordmark">Emdidi Studio · MTip</p>
+			<h1>Terms of Use</h1>
+			<p class="meta">Last Updated — April 15, 2026</p>
+			<div>
+				<a href="index.html" target="_self">Privacy Policy</a>
+			</div>
+		</header>
+
+		<main class="container">
+			<!-- AGREEMENT INTRO -->
+			<div class="agreement-banner">
+				<strong>AGREEMENT TO OUR LEGAL TERMS</strong><br />
+				We are <strong>Emdidi Studio</strong> ("Company," "we," "us,"
+				"our"). We operate the <strong>MTip</strong> mobile application
+				and any other related products or services that refer or link to
+				these Legal Terms (collectively, the "Services"). You can
+				contact us at
+				<a href="mailto:emdidistudio@gmail.com" style="color: white"
+					>emdidistudio@gmail.com</a
+				>.
+			</div>
+
+			<p>
+				These Legal Terms constitute a legally binding agreement between
+				you and Emdidi Studio regarding your access to and use of the
+				Services. By accessing the Services, you have read, understood,
+				and agreed to be bound by all of these Legal Terms.
+				<strong
+					>IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU
+					ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU
+					MUST DISCONTINUE USE IMMEDIATELY.</strong
+				>
+			</p>
+
+			<p>
+				We reserve the right to make changes to these Legal Terms at any
+				time. We will alert you by updating the "Last updated" date.
+				Your continued use of the Services after any revision
+				constitutes acceptance of the updated terms. We recommend that
+				you print a copy of these Legal Terms for your records.
+			</p>
+
+			<!-- TABLE OF CONTENTS -->
+			<div class="toc-block">
+				<h2>Table of Contents</h2>
+				<ol class="toc-list">
+					<li>
+						<a href="#s1"
+							><span class="num">1.</span> Our Services</a
+						>
+					</li>
+					<li>
+						<a href="#s2"
+							><span class="num">2.</span> Intellectual Property
+							Rights</a
+						>
+					</li>
+					<li>
+						<a href="#s3"
+							><span class="num">3.</span> User Representations</a
+						>
+					</li>
+					<li>
+						<a href="#s4"
+							><span class="num">4.</span> Prohibited
+							Activities</a
+						>
+					</li>
+					<li>
+						<a href="#s5"
+							><span class="num">5.</span> User Generated
+							Contributions</a
+						>
+					</li>
+					<li>
+						<a href="#s6"
+							><span class="num">6.</span> Contribution License</a
+						>
+					</li>
+					<li>
+						<a href="#s7"
+							><span class="num">7.</span> Services Management</a
+						>
+					</li>
+					<li>
+						<a href="#s8"
+							><span class="num">8.</span> Term and Termination</a
+						>
+					</li>
+					<li>
+						<a href="#s9"
+							><span class="num">9.</span> Modifications and
+							Interruptions</a
+						>
+					</li>
+					<li>
+						<a href="#s10"
+							><span class="num">10.</span> Governing Law</a
+						>
+					</li>
+					<li>
+						<a href="#s11"
+							><span class="num">11.</span> Dispute Resolution</a
+						>
+					</li>
+					<li>
+						<a href="#s12"
+							><span class="num">12.</span> Corrections</a
+						>
+					</li>
+					<li>
+						<a href="#s13"
+							><span class="num">13.</span> Disclaimer</a
+						>
+					</li>
+					<li>
+						<a href="#s14"
+							><span class="num">14.</span> Limitations of
+							Liability</a
+						>
+					</li>
+					<li>
+						<a href="#s15"
+							><span class="num">15.</span> Indemnification</a
+						>
+					</li>
+					<li>
+						<a href="#s16"
+							><span class="num">16.</span> User Data</a
+						>
+					</li>
+					<li>
+						<a href="#s17"
+							><span class="num">17.</span> Electronic
+							Communications</a
+						>
+					</li>
+					<li>
+						<a href="#s18"
+							><span class="num">18.</span> Miscellaneous</a
+						>
+					</li>
+					<li>
+						<a href="#s19"
+							><span class="num">19.</span> Contact Us</a
+						>
+					</li>
+				</ol>
+			</div>
+
+			<!-- S1 -->
+			<div class="section" id="s1">
+				<div class="section-header">
+					<span class="section-num">1</span>
+					<h2>Our Services</h2>
+				</div>
+				<p>
+					The information provided when using the Services is not
+					intended for distribution to or use by any person or entity
+					in any jurisdiction or country where such distribution or
+					use would be contrary to law or regulation, or which would
+					subject us to any registration requirement within such
+					jurisdiction or country. Those who choose to access the
+					Services from other locations do so on their own initiative
+					and are solely responsible for compliance with local laws.
+				</p>
+			</div>
+
+			<!-- S2 -->
+			<div class="section" id="s2">
+				<div class="section-header">
+					<span class="section-num">2</span>
+					<h2>Intellectual Property Rights</h2>
+				</div>
+
+				<h3>Our intellectual property</h3>
+				<p>
+					We are the owner or licensee of all intellectual property
+					rights in our Services, including all source code,
+					databases, functionality, software, designs, audio, video,
+					text, photographs, and graphics (collectively, the
+					"Content"), as well as the trademarks, service marks, and
+					logos ("Marks"). Our Content and Marks are protected by
+					copyright and trademark laws worldwide. The Content and
+					Marks are provided "AS IS" for your personal, non-commercial
+					use or internal business purpose only.
+				</p>
+
+				<h3>Your use of our Services</h3>
+				<p>
+					Subject to compliance with these Legal Terms, we grant you a
+					non-exclusive, non-transferable, revocable license to:
+				</p>
+				<ul>
+					<li>Access the Services; and</li>
+					<li>
+						Download or print a copy of any portion of the Content
+						to which you have properly gained access,
+					</li>
+				</ul>
+				<p>
+					solely for your personal, non-commercial use or internal
+					business purpose.
+				</p>
+				<p>
+					No part of the Services, Content, or Marks may be copied,
+					reproduced, aggregated, republished, uploaded, posted,
+					publicly displayed, encoded, translated, transmitted,
+					distributed, sold, licensed, or otherwise exploited for any
+					commercial purpose without our express prior written
+					permission. Any breach of these Intellectual Property Rights
+					will constitute a material breach of our Legal Terms and
+					your right to use our Services will terminate immediately.
+				</p>
+
+				<h3>Your submissions</h3>
+				<p>
+					By sending us any question, comment, suggestion, idea,
+					feedback, or other information about the Services
+					("Submissions"), you agree to assign to us all intellectual
+					property rights in such Submission. You confirm that:
+				</p>
+				<ul>
+					<li>
+						You will not post any Submission that is illegal,
+						harassing, hateful, harmful, defamatory, obscene,
+						bullying, abusive, discriminatory, threatening, sexually
+						explicit, false, inaccurate, deceitful, or misleading;
+					</li>
+					<li>
+						To the extent permissible by law, you waive any moral
+						rights to any such Submission;
+					</li>
+					<li>
+						Your Submissions are original to you or you have the
+						necessary rights and licenses to submit them;
+					</li>
+					<li>
+						Your Submissions do not constitute confidential
+						information.
+					</li>
+				</ul>
+				<p>
+					You are solely responsible for your Submissions and agree to
+					reimburse us for any losses we may suffer because of your
+					breach of this section, any third party's intellectual
+					property rights, or applicable law.
+				</p>
+			</div>
+
+			<!-- S3 -->
+			<div class="section" id="s3">
+				<div class="section-header">
+					<span class="section-num">3</span>
+					<h2>User Representations</h2>
+				</div>
+				<p>By using the Services, you represent and warrant that:</p>
+				<ol>
+					<li>
+						You have the legal capacity and agree to comply with
+						these Legal Terms;
+					</li>
+					<li>
+						You are not a minor in the jurisdiction in which you
+						reside;
+					</li>
+					<li>
+						You will not access the Services through automated or
+						non-human means (bot, script, etc.);
+					</li>
+					<li>
+						You will not use the Services for any illegal or
+						unauthorized purpose; and
+					</li>
+					<li>
+						Your use of the Services will not violate any applicable
+						law or regulation.
+					</li>
+				</ol>
+				<p>
+					If you provide any information that is untrue, inaccurate,
+					not current, or incomplete, we have the right to suspend or
+					terminate your account and refuse any current or future use
+					of the Services.
+				</p>
+			</div>
+
+			<!-- S4 -->
+			<div class="section" id="s4">
+				<div class="section-header">
+					<span class="section-num">4</span>
+					<h2>Prohibited Activities</h2>
+				</div>
+				<p>
+					You may not access or use the Services for any purpose other
+					than that for which we make the Services available. As a
+					user, you agree not to:
+				</p>
+				<ul>
+					<li>
+						Systematically retrieve data or content from the
+						Services to create a collection, compilation, database,
+						or directory without written permission;
+					</li>
+					<li>
+						Trick, defraud, or mislead us and other users,
+						especially to learn sensitive account information such
+						as passwords;
+					</li>
+					<li>
+						Circumvent, disable, or otherwise interfere with
+						security-related features of the Services;
+					</li>
+					<li>
+						Disparage, tarnish, or otherwise harm us and/or the
+						Services;
+					</li>
+					<li>
+						Use any information obtained from the Services to
+						harass, abuse, or harm another person;
+					</li>
+					<li>
+						Make improper use of our support services or submit
+						false reports of abuse or misconduct;
+					</li>
+					<li>
+						Use the Services in a manner inconsistent with any
+						applicable laws or regulations;
+					</li>
+					<li>
+						Engage in unauthorized framing of or linking to the
+						Services;
+					</li>
+					<li>
+						Upload or transmit viruses, Trojan horses, spam, or
+						other harmful material;
+					</li>
+					<li>
+						Engage in any automated use of the system, including
+						data mining, robots, or similar tools;
+					</li>
+					<li>
+						Delete copyright or other proprietary rights notices
+						from any Content;
+					</li>
+					<li>Attempt to impersonate another user or person;</li>
+					<li>
+						Upload or transmit spyware or passive collection
+						mechanisms;
+					</li>
+					<li>
+						Interfere with, disrupt, or create an undue burden on
+						the Services or connected networks;
+					</li>
+					<li>
+						Harass, annoy, intimidate, or threaten any of our
+						employees or agents;
+					</li>
+					<li>
+						Attempt to bypass any measures designed to prevent or
+						restrict access to the Services;
+					</li>
+					<li>
+						Copy or adapt the Services' software, including Flash,
+						PHP, HTML, JavaScript, or other code;
+					</li>
+					<li>
+						Decipher, decompile, disassemble, or reverse engineer
+						any software making up a part of the Services (except as
+						permitted by applicable law);
+					</li>
+					<li>
+						Use or launch any unauthorized automated system or
+						script;
+					</li>
+					<li>
+						Use a buying agent or purchasing agent to make purchases
+						on the Services;
+					</li>
+					<li>
+						Make any unauthorized use of the Services, including
+						collecting usernames or email addresses for unsolicited
+						email;
+					</li>
+					<li>
+						Use the Services as part of any effort to compete with
+						us or for any revenue-generating or commercial
+						enterprise.
+					</li>
+				</ul>
+			</div>
+
+			<!-- S5 -->
+			<div class="section" id="s5">
+				<div class="section-header">
+					<span class="section-num">5</span>
+					<h2>User Generated Contributions</h2>
+				</div>
+				<p>
+					The Services do not currently offer users the ability to
+					submit or post public content. We may, in the future,
+					provide you with the opportunity to create, submit, post,
+					display, transmit, perform, publish, distribute, or
+					broadcast content and materials to us or on the Services,
+					including text, writings, video, audio, photographs,
+					graphics, comments, suggestions, or personal information
+					(collectively, "Contributions"). Any future Contributions
+					may be viewable by other users and through third-party
+					websites.
+				</p>
+			</div>
+
+			<!-- S6 -->
+			<div class="section" id="s6">
+				<div class="section-header">
+					<span class="section-num">6</span>
+					<h2>Contribution License</h2>
+				</div>
+				<p>
+					You and the Services agree that we may access, store,
+					process, and use any information and personal data that you
+					provide and your choices (including settings).
+				</p>
+				<p>
+					By submitting suggestions or other feedback regarding the
+					Services, you agree that we can use and share such feedback
+					for any purpose without compensation to you.
+				</p>
+				<p>
+					We do not assert any ownership over your Contributions. You
+					retain full ownership of all your Contributions and any
+					associated intellectual property rights. We are not liable
+					for any statements or representations in your Contributions.
+					You are solely responsible for your Contributions and agree
+					to exonerate us from any responsibility and to refrain from
+					any legal action against us regarding your Contributions.
+				</p>
+			</div>
+
+			<!-- S7 -->
+			<div class="section" id="s7">
+				<div class="section-header">
+					<span class="section-num">7</span>
+					<h2>Services Management</h2>
+				</div>
+				<p>We reserve the right, but not the obligation, to:</p>
+				<ol>
+					<li>
+						Monitor the Services for violations of these Legal
+						Terms;
+					</li>
+					<li>
+						Take appropriate legal action against anyone who
+						violates the law or these Legal Terms, including
+						reporting such user to law enforcement;
+					</li>
+					<li>
+						In our sole discretion, refuse, restrict access to,
+						limit the availability of, or disable any of your
+						Contributions or any portion thereof;
+					</li>
+					<li>
+						Remove from the Services or disable all files and
+						content that are excessive in size or burdensome to our
+						systems; and
+					</li>
+					<li>
+						Otherwise manage the Services in a manner designed to
+						protect our rights and property and to facilitate the
+						proper functioning of the Services.
+					</li>
+				</ol>
+			</div>
+
+			<!-- S8 -->
+			<div class="section" id="s8">
+				<div class="section-header">
+					<span class="section-num">8</span>
+					<h2>Term and Termination</h2>
+				</div>
+				<p>
+					These Legal Terms shall remain in full force and effect
+					while you use the Services.
+				</p>
+				<div class="legal-caps">
+					WITHOUT LIMITING ANY OTHER PROVISION OF THESE LEGAL TERMS,
+					WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT
+					NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE SERVICES
+					(INCLUDING BLOCKING CERTAIN IP ADDRESSES), TO ANY PERSON FOR
+					ANY REASON OR FOR NO REASON, INCLUDING WITHOUT LIMITATION
+					FOR BREACH OF ANY REPRESENTATION, WARRANTY, OR COVENANT
+					CONTAINED IN THESE LEGAL TERMS OR OF ANY APPLICABLE LAW OR
+					REGULATION. WE MAY TERMINATE YOUR USE OR PARTICIPATION IN
+					THE SERVICES OR DELETE ANY CONTENT OR INFORMATION THAT YOU
+					POSTED AT ANY TIME, WITHOUT WARNING, IN OUR SOLE DISCRETION.
+				</div>
+				<p>
+					If we terminate or suspend your account for any reason, you
+					are prohibited from registering and creating a new account
+					under your name, a fake or borrowed name, or the name of any
+					third party. We also reserve the right to take appropriate
+					legal action, including pursuing civil, criminal, and
+					injunctive redress.
+				</p>
+			</div>
+
+			<!-- S9 -->
+			<div class="section" id="s9">
+				<div class="section-header">
+					<span class="section-num">9</span>
+					<h2>Modifications and Interruptions</h2>
+				</div>
+				<p>
+					We reserve the right to change, modify, or remove the
+					contents of the Services at any time or for any reason at
+					our sole discretion without notice. We will not be liable to
+					you or any third party for any modification, price change,
+					suspension, or discontinuance of the Services.
+				</p>
+				<p>
+					We cannot guarantee the Services will be available at all
+					times. We may experience hardware, software, or other
+					problems or need to perform maintenance, resulting in
+					interruptions, delays, or errors. Nothing in these Legal
+					Terms will be construed to obligate us to maintain and
+					support the Services or to supply any corrections, updates,
+					or releases in connection therewith.
+				</p>
+			</div>
+
+			<!-- S10 -->
+			<div class="section" id="s10">
+				<div class="section-header">
+					<span class="section-num">10</span>
+					<h2>Governing Law</h2>
+				</div>
+				<p>
+					These Legal Terms shall be governed by and defined following
+					the laws of
+					<span class="placeholder">jurisdiction to be specified</span
+					>. The courts of
+					<span class="placeholder"
+						>jurisdiction to be specified</span
+					>
+					shall have exclusive jurisdiction to resolve any dispute
+					arising in connection with these Legal Terms.
+				</p>
+			</div>
+
+			<!-- S11 -->
+			<div class="section" id="s11">
+				<div class="section-header">
+					<span class="section-num">11</span>
+					<h2>Dispute Resolution</h2>
+				</div>
+
+				<h3>Informal Negotiations</h3>
+				<p>
+					The Parties agree to first attempt to negotiate any Dispute
+					informally for at least
+					<span class="placeholder">___ days</span> before initiating
+					arbitration. Such informal negotiations commence upon
+					written notice from one Party to the other Party.
+				</p>
+
+				<h3>Binding Arbitration</h3>
+				<p>
+					Any dispute arising out of or in connection with these Legal
+					Terms shall be referred to and finally resolved by the
+					International Commercial Arbitration Court under the
+					European Arbitration Chamber (Belgium, Brussels, Avenue
+					Louise, 146) according to the Rules of this ICAC. The number
+					of arbitrators shall be
+					<span class="placeholder">to be specified</span>. The seat
+					of arbitration shall be
+					<span class="placeholder">to be specified</span>. The
+					language of the proceedings shall be
+					<span class="placeholder">to be specified</span>. The
+					governing law shall be substantive law of
+					<span class="placeholder">to be specified</span>.
+				</p>
+
+				<h3>Restrictions</h3>
+				<p>
+					Any arbitration shall be limited to the Dispute between the
+					Parties individually. To the full extent permitted by law:
+					(a) no arbitration shall be joined with any other
+					proceeding; (b) there is no right or authority for any
+					Dispute to be arbitrated on a class-action basis; and (c)
+					there is no right or authority for any Dispute to be brought
+					in a purported representative capacity on behalf of the
+					general public or any other persons.
+				</p>
+
+				<h3>Exceptions to Informal Negotiations and Arbitration</h3>
+				<p>
+					The following Disputes are not subject to the above
+					provisions: (a) any Disputes seeking to enforce or protect
+					intellectual property rights; (b) any Dispute related to
+					allegations of theft, piracy, invasion of privacy, or
+					unauthorized use; and (c) any claim for injunctive relief.
+					If this provision is found to be illegal or unenforceable,
+					the relevant Dispute shall be decided by a court of
+					competent jurisdiction, and the Parties agree to submit to
+					the personal jurisdiction of that court.
+				</p>
+			</div>
+
+			<!-- S12 -->
+			<div class="section" id="s12">
+				<div class="section-header">
+					<span class="section-num">12</span>
+					<h2>Corrections</h2>
+				</div>
+				<p>
+					There may be information on the Services that contains
+					typographical errors, inaccuracies, or omissions, including
+					descriptions, pricing, availability, and various other
+					information. We reserve the right to correct any errors,
+					inaccuracies, or omissions and to change or update the
+					information on the Services at any time, without prior
+					notice.
+				</p>
+			</div>
+
+			<!-- S13 -->
+			<div class="section" id="s13">
+				<div class="section-header">
+					<span class="section-num">13</span>
+					<h2>Disclaimer</h2>
+				</div>
+				<div class="legal-caps">
+					THE SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE
+					BASIS. YOU AGREE THAT YOUR USE OF THE SERVICES WILL BE AT
+					YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE
+					DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION
+					WITH THE SERVICES AND YOUR USE THEREOF, INCLUDING, WITHOUT
+					LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+					FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE
+					MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR
+					COMPLETENESS OF THE SERVICES' CONTENT OR THE CONTENT OF ANY
+					WEBSITES OR MOBILE APPLICATIONS LINKED TO THE SERVICES AND
+					WE WILL ASSUME NO LIABILITY OR RESPONSIBILITY FOR ANY (1)
+					ERRORS, MISTAKES, OR INACCURACIES OF CONTENT AND MATERIALS,
+					(2) PERSONAL INJURY OR PROPERTY DAMAGE RESULTING FROM YOUR
+					ACCESS TO AND USE OF THE SERVICES, (3) ANY UNAUTHORIZED
+					ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY PERSONAL
+					INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (4)
+					ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE
+					SERVICES, (5) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE
+					WHICH MAY BE TRANSMITTED TO OR THROUGH THE SERVICES BY ANY
+					THIRD PARTY, AND/OR (6) ANY ERRORS OR OMISSIONS IN ANY
+					CONTENT AND MATERIALS OR FOR ANY LOSS OR DAMAGE INCURRED AS
+					A RESULT OF THE USE OF ANY CONTENT POSTED, TRANSMITTED, OR
+					OTHERWISE MADE AVAILABLE VIA THE SERVICES. AS WITH THE
+					PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN
+					ANY ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND
+					EXERCISE CAUTION WHERE APPROPRIATE.
+				</div>
+			</div>
+
+			<!-- S14 -->
+			<div class="section" id="s14">
+				<div class="section-header">
+					<span class="section-num">14</span>
+					<h2>Limitations of Liability</h2>
+				</div>
+				<div class="legal-caps">
+					IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS
+					BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT,
+					INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR
+					PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS
+					OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE
+					SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF
+					SUCH DAMAGES. NOTWITHSTANDING ANYTHING TO THE CONTRARY
+					CONTAINED HEREIN, OUR LIABILITY TO YOU FOR ANY CAUSE
+					WHATSOEVER WILL AT ALL TIMES BE LIMITED TO THE LESSER OF THE
+					AMOUNT PAID, IF ANY, BY YOU TO US. CERTAIN US STATE LAWS AND
+					INTERNATIONAL LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED
+					WARRANTIES OR THE EXCLUSION OR LIMITATION OF CERTAIN
+					DAMAGES. IF THESE LAWS APPLY TO YOU, SOME OR ALL OF THE
+					ABOVE DISCLAIMERS OR LIMITATIONS MAY NOT APPLY TO YOU, AND
+					YOU MAY HAVE ADDITIONAL RIGHTS.
+				</div>
+			</div>
+
+			<!-- S15 -->
+			<div class="section" id="s15">
+				<div class="section-header">
+					<span class="section-num">15</span>
+					<h2>Indemnification</h2>
+				</div>
+				<p>
+					You agree to defend, indemnify, and hold us harmless,
+					including our subsidiaries, affiliates, and all of our
+					respective officers, agents, partners, and employees, from
+					and against any loss, damage, liability, claim, or demand,
+					including reasonable attorneys' fees and expenses, made by
+					any third party due to or arising out of:
+				</p>
+				<ol>
+					<li>Use of the Services;</li>
+					<li>Breach of these Legal Terms;</li>
+					<li>
+						Any breach of your representations and warranties set
+						forth in these Legal Terms;
+					</li>
+					<li>
+						Your violation of the rights of a third party, including
+						intellectual property rights; or
+					</li>
+					<li>
+						Any overt harmful act toward any other user of the
+						Services with whom you connected via the Services.
+					</li>
+				</ol>
+				<p>
+					Notwithstanding the foregoing, we reserve the right, at your
+					expense, to assume the exclusive defense and control of any
+					matter for which you are required to indemnify us, and you
+					agree to cooperate, at your expense, with our defense of
+					such claims.
+				</p>
+			</div>
+
+			<!-- S16 -->
+			<div class="section" id="s16">
+				<div class="section-header">
+					<span class="section-num">16</span>
+					<h2>User Data</h2>
+				</div>
+				<p>
+					We will maintain certain data that you transmit to the
+					Services for the purpose of managing the performance of the
+					Services, as well as data relating to your use of the
+					Services. Although we perform regular routine backups, you
+					are solely responsible for all data that you transmit or
+					that relates to any activity you have undertaken using the
+					Services. You agree that we shall have no liability to you
+					for any loss or corruption of any such data, and you hereby
+					waive any right of action against us arising from any such
+					loss or corruption.
+				</p>
+			</div>
+
+			<!-- S17 -->
+			<div class="section" id="s17">
+				<div class="section-header">
+					<span class="section-num">17</span>
+					<h2>
+						Electronic Communications, Transactions, and Signatures
+					</h2>
+				</div>
+				<p>
+					Visiting the Services, sending us emails, and completing
+					online forms constitute electronic communications. You
+					consent to receive electronic communications, and you agree
+					that all agreements, notices, disclosures, and other
+					communications we provide to you electronically satisfy any
+					legal requirement that such communication be in writing.
+				</p>
+				<div class="legal-caps">
+					YOU HEREBY AGREE TO THE USE OF ELECTRONIC SIGNATURES,
+					CONTRACTS, ORDERS, AND OTHER RECORDS, AND TO ELECTRONIC
+					DELIVERY OF NOTICES, POLICIES, AND RECORDS OF TRANSACTIONS
+					INITIATED OR COMPLETED BY US OR VIA THE SERVICES. YOU HEREBY
+					WAIVE ANY RIGHTS OR REQUIREMENTS UNDER ANY STATUTES,
+					REGULATIONS, RULES, ORDINANCES, OR OTHER LAWS IN ANY
+					JURISDICTION WHICH REQUIRE AN ORIGINAL SIGNATURE OR DELIVERY
+					OR RETENTION OF NON-ELECTRONIC RECORDS, OR TO PAYMENTS OR
+					THE GRANTING OF CREDITS BY ANY MEANS OTHER THAN ELECTRONIC
+					MEANS.
+				</div>
+			</div>
+
+			<!-- S18 -->
+			<div class="section" id="s18">
+				<div class="section-header">
+					<span class="section-num">18</span>
+					<h2>Miscellaneous</h2>
+				</div>
+				<p>
+					These Legal Terms and any policies or operating rules posted
+					by us on the Services constitute the entire agreement and
+					understanding between you and us. Our failure to exercise or
+					enforce any right or provision of these Legal Terms shall
+					not operate as a waiver of such right or provision. These
+					Legal Terms operate to the fullest extent permissible by
+					law. We may assign any or all of our rights and obligations
+					to others at any time.
+				</p>
+				<p>
+					We shall not be responsible or liable for any loss, damage,
+					delay, or failure to act caused by any cause beyond our
+					reasonable control. If any provision of these Legal Terms is
+					determined to be unlawful, void, or unenforceable, that
+					provision is deemed severable and does not affect the
+					validity and enforceability of any remaining provisions.
+				</p>
+				<p>
+					There is no joint venture, partnership, employment, or
+					agency relationship created between you and us as a result
+					of these Legal Terms or use of the Services. You agree that
+					these Legal Terms will not be construed against us by virtue
+					of having drafted them. You hereby waive any defenses based
+					on the electronic form of these Legal Terms and the lack of
+					signing by the parties.
+				</p>
+			</div>
+
+			<!-- S19 -->
+			<div class="section" id="s19">
+				<div class="section-header">
+					<span class="section-num">19</span>
+					<h2>Contact Us</h2>
+				</div>
+				<p>
+					To resolve a complaint regarding the Services or to receive
+					further information regarding use of the Services, please
+					contact us at:
+				</p>
+				<div
+					style="
+						margin-top: 1rem;
+						padding: 1rem 1.5rem;
+						background: var(--highlight);
+						border-left: 3px solid var(--accent);
+					"
+				>
+					<strong>Emdidi Studio</strong><br />
+					<a href="mailto:emdidistudio@gmail.com"
+						>emdidistudio@gmail.com</a
+					>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<p class="studio">Emdidi Studio</p>
+			<p>
+				Questions?
+				<a href="mailto:emdidistudio@gmail.com"
+					>emdidistudio@gmail.com</a
+				>
+			</p>
+			<p style="margin-top: 1rem; font-size: 0.72rem; opacity: 0.4">
+				Terms of Use · MTip · Last Updated April 15, 2026
+			</p>
+		</footer>
+
+		<button
+			class="back-top"
+			id="backTop"
+			onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+			aria-label="Back to top"
+		>
+			↑
+		</button>
+
+		<script>
+			const btn = document.getElementById("backTop");
+			window.addEventListener("scroll", () => {
+				btn.classList.toggle("visible", window.scrollY > 400);
+			});
+		</script>
+	</body>
 </html>
