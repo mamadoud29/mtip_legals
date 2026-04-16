@@ -1,0 +1,1276 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Privacy Policy — Emdidi Studio</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			:root {
+				--ink: #0f0f0f;
+				--paper: #f5f2ec;
+				--accent: #c84b31;
+				--muted: #8a8276;
+				--rule: #d5d0c8;
+				--highlight: #fff8e7;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html {
+				scroll-behavior: smooth;
+			}
+
+			body {
+				font-family: "DM Sans", sans-serif;
+				background: var(--paper);
+				color: var(--ink);
+				font-size: 16px;
+				line-height: 1.75;
+			}
+
+			/* ── HEADER ── */
+			header {
+				background: var(--ink);
+				color: var(--paper);
+				padding: 3.5rem 2rem 2.5rem;
+				text-align: center;
+				position: relative;
+				overflow: hidden;
+			}
+
+			header::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background: repeating-linear-gradient(
+					45deg,
+					transparent,
+					transparent 40px,
+					rgba(255, 255, 255, 0.015) 40px,
+					rgba(255, 255, 255, 0.015) 41px
+				);
+			}
+
+			.wordmark {
+				font-family: "DM Serif Display", serif;
+				font-size: 0.85rem;
+				letter-spacing: 0.25em;
+				text-transform: uppercase;
+				color: var(--accent);
+				margin-bottom: 1rem;
+			}
+
+			header h1 {
+				font-family: "DM Serif Display", serif;
+				font-size: clamp(2.2rem, 5vw, 3.5rem);
+				font-weight: 400;
+				line-height: 1.1;
+				margin-bottom: 1rem;
+			}
+
+			.meta {
+				font-size: 0.8rem;
+				color: rgba(245, 242, 236, 0.45);
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+			}
+
+			/* ── LAYOUT ── */
+			.container {
+				max-width: 860px;
+				margin: 0 auto;
+				padding: 0 2rem;
+			}
+
+			/* ── TOC ── */
+			.toc-block {
+				background: var(--ink);
+				color: var(--paper);
+				margin: 3rem 0;
+				padding: 2rem 2.5rem;
+				border-left: 4px solid var(--accent);
+			}
+
+			.toc-block h2 {
+				font-family: "DM Serif Display", serif;
+				font-size: 0.75rem;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+				margin-bottom: 1.2rem;
+				color: var(--accent);
+			}
+
+			.toc-list {
+				list-style: none;
+				columns: 2;
+				column-gap: 2rem;
+			}
+
+			@media (max-width: 600px) {
+				.toc-list {
+					columns: 1;
+				}
+			}
+
+			.toc-list li {
+				margin-bottom: 0.4rem;
+				break-inside: avoid;
+			}
+
+			.toc-list a {
+				color: rgba(245, 242, 236, 0.7);
+				text-decoration: none;
+				font-size: 0.82rem;
+				font-weight: 300;
+				transition: color 0.15s;
+				display: flex;
+				gap: 0.5rem;
+				align-items: baseline;
+			}
+
+			.toc-list a:hover {
+				color: var(--accent);
+			}
+
+			.toc-list a .num {
+				color: var(--accent);
+				font-size: 0.7rem;
+				font-weight: 500;
+				min-width: 1.2rem;
+			}
+
+			/* ── SUMMARY CARDS ── */
+			.summary-strip {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+				gap: 1px;
+				background: var(--rule);
+				border: 1px solid var(--rule);
+				margin: 2.5rem 0;
+			}
+
+			.summary-card {
+				background: var(--paper);
+				padding: 1.4rem 1.6rem;
+			}
+
+			.summary-card .q {
+				font-family: "DM Serif Display", serif;
+				font-size: 0.95rem;
+				margin-bottom: 0.4rem;
+			}
+
+			.summary-card .a {
+				font-size: 0.8rem;
+				color: var(--muted);
+				line-height: 1.5;
+			}
+
+			/* ── SECTIONS ── */
+			.section {
+				padding: 3rem 0 1rem;
+				border-top: 1px solid var(--rule);
+				animation: fadeUp 0.4s ease both;
+			}
+
+			@keyframes fadeUp {
+				from {
+					opacity: 0;
+					transform: translateY(10px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.section-header {
+				display: flex;
+				gap: 1rem;
+				align-items: flex-start;
+				margin-bottom: 1.4rem;
+			}
+
+			.section-num {
+				font-family: "DM Serif Display", serif;
+				font-size: 3rem;
+				line-height: 1;
+				color: var(--rule);
+				min-width: 2.5rem;
+				user-select: none;
+			}
+
+			.section h2 {
+				font-family: "DM Serif Display", serif;
+				font-size: 1.45rem;
+				font-weight: 400;
+				line-height: 1.2;
+				padding-top: 0.5rem;
+			}
+
+			.short-desc {
+				background: var(--highlight);
+				border-left: 3px solid var(--accent);
+				padding: 0.75rem 1rem;
+				font-size: 0.85rem;
+				color: var(--muted);
+				font-style: italic;
+				margin-bottom: 1.5rem;
+			}
+
+			/* ── PROSE ── */
+			p {
+				margin-bottom: 1rem;
+				font-weight: 300;
+			}
+
+			h3 {
+				font-family: "DM Serif Display", serif;
+				font-size: 1.05rem;
+				font-weight: 400;
+				margin: 1.8rem 0 0.6rem;
+			}
+
+			ul,
+			ol {
+				padding-left: 1.4rem;
+				margin-bottom: 1rem;
+			}
+
+			li {
+				margin-bottom: 0.35rem;
+				font-weight: 300;
+				font-size: 0.95rem;
+			}
+
+			a {
+				color: var(--accent);
+				text-decoration: underline;
+				text-underline-offset: 2px;
+			}
+
+			strong {
+				font-weight: 500;
+			}
+			em {
+				font-style: italic;
+			}
+
+			/* ── TABLE ── */
+			.table-wrap {
+				overflow-x: auto;
+				margin: 1.5rem 0;
+			}
+
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				font-size: 0.83rem;
+			}
+
+			th {
+				background: var(--ink);
+				color: var(--paper);
+				font-weight: 500;
+				text-align: left;
+				padding: 0.7rem 1rem;
+				font-size: 0.75rem;
+				letter-spacing: 0.05em;
+				text-transform: uppercase;
+			}
+
+			td {
+				padding: 0.65rem 1rem;
+				border-bottom: 1px solid var(--rule);
+				vertical-align: top;
+				font-weight: 300;
+			}
+
+			tr:nth-child(even) td {
+				background: rgba(0, 0, 0, 0.025);
+			}
+
+			.badge {
+				display: inline-block;
+				padding: 0.15rem 0.55rem;
+				border-radius: 2px;
+				font-size: 0.7rem;
+				font-weight: 500;
+				letter-spacing: 0.05em;
+				text-transform: uppercase;
+			}
+
+			.badge-yes {
+				background: #d4edda;
+				color: #1a6930;
+			}
+			.badge-no {
+				background: #f8d7da;
+				color: #842029;
+			}
+
+			/* ── FOOTER ── */
+			footer {
+				margin-top: 5rem;
+				background: var(--ink);
+				color: rgba(245, 242, 236, 0.5);
+				text-align: center;
+				padding: 2.5rem;
+				font-size: 0.78rem;
+			}
+
+			footer a {
+				color: var(--accent);
+			}
+
+			footer .studio {
+				font-family: "DM Serif Display", serif;
+				color: var(--paper);
+				font-size: 1.1rem;
+				margin-bottom: 0.5rem;
+			}
+
+			/* ── BACK TO TOP ── */
+			.back-top {
+				position: fixed;
+				bottom: 1.5rem;
+				right: 1.5rem;
+				width: 2.4rem;
+				height: 2.4rem;
+				background: var(--accent);
+				color: white;
+				border: none;
+				cursor: pointer;
+				font-size: 1rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				opacity: 0;
+				transition: opacity 0.2s;
+				z-index: 99;
+			}
+
+			.back-top.visible {
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<p class="wordmark">Emdidi Studio</p>
+			<h1>Privacy Policy</h1>
+			<p class="meta">Last Updated — April 15, 2026</p>
+		</header>
+
+		<main class="container">
+			<!-- INTRO -->
+			<div style="padding: 2.5rem 0 0">
+				<p>
+					This Privacy Notice for
+					<strong>Emdidi Studio</strong> ("we," "us," or "our")
+					describes how and why we might access, collect, store, use,
+					and/or share ("process") your personal information when you
+					use our services ("Services"), including when you:
+				</p>
+				<ul>
+					<li>
+						Download and use our mobile application
+						(<strong>MTip</strong>), or any other application of
+						ours that links to this Privacy Notice
+					</li>
+					<li>
+						Engage with us in other related ways, including any
+						marketing or events
+					</li>
+				</ul>
+				<p>
+					<strong>Questions or concerns?</strong> Reading this Privacy
+					Notice will help you understand your privacy rights and
+					choices. We are responsible for making decisions about how
+					your personal information is processed. If you do not agree
+					with our policies and practices, please do not use our
+					Services. If you still have any questions, please contact us
+					at
+					<a href="mailto:emdidistudio@gmail.com"
+						>emdidistudio@gmail.com</a
+					>.
+				</p>
+			</div>
+
+			<!-- SUMMARY CARDS -->
+			<div class="summary-strip">
+				<div class="summary-card">
+					<p class="q">What info do we collect?</p>
+					<p class="a">
+						Personal info you provide (name, email, username) plus
+						automatically collected device & usage data.
+					</p>
+				</div>
+				<div class="summary-card">
+					<p class="q">Sensitive information?</p>
+					<p class="a">
+						We do not process sensitive personal information.
+					</p>
+				</div>
+				<div class="summary-card">
+					<p class="q">Third-party data?</p>
+					<p class="a">
+						We do not collect any information from third parties.
+					</p>
+				</div>
+				<div class="summary-card">
+					<p class="q">How do we keep it safe?</p>
+					<p class="a">
+						Organizational & technical security measures are in
+						place, though no system is 100% guaranteed.
+					</p>
+				</div>
+			</div>
+
+			<!-- TABLE OF CONTENTS -->
+			<div class="toc-block">
+				<h2>Table of Contents</h2>
+				<ol class="toc-list">
+					<li>
+						<a href="#s1"
+							><span class="num">1.</span> What Information Do We
+							Collect?</a
+						>
+					</li>
+					<li>
+						<a href="#s2"
+							><span class="num">2.</span> How Do We Process Your
+							Information?</a
+						>
+					</li>
+					<li>
+						<a href="#s3"
+							><span class="num">3.</span> What Legal Bases Do We
+							Rely On?</a
+						>
+					</li>
+					<li>
+						<a href="#s4"
+							><span class="num">4.</span> When And With Whom Do
+							We Share?</a
+						>
+					</li>
+					<li>
+						<a href="#s5"
+							><span class="num">5.</span> Third-Party Websites</a
+						>
+					</li>
+					<li>
+						<a href="#s6"
+							><span class="num">6.</span> Cookies &amp; Tracking
+							Technologies</a
+						>
+					</li>
+					<li>
+						<a href="#s7"
+							><span class="num">7.</span> International
+							Transfers</a
+						>
+					</li>
+					<li>
+						<a href="#s8"
+							><span class="num">8.</span> How Long Do We Keep
+							Your Info?</a
+						>
+					</li>
+					<li>
+						<a href="#s9"
+							><span class="num">9.</span> How Do We Keep Your
+							Info Safe?</a
+						>
+					</li>
+					<li>
+						<a href="#s10"
+							><span class="num">10.</span> Information From
+							Minors</a
+						>
+					</li>
+					<li>
+						<a href="#s11"
+							><span class="num">11.</span> Your Privacy Rights</a
+						>
+					</li>
+					<li>
+						<a href="#s12"
+							><span class="num">12.</span> Do-Not-Track
+							Features</a
+						>
+					</li>
+					<li>
+						<a href="#s13"
+							><span class="num">13.</span> US Residents' Specific
+							Rights</a
+						>
+					</li>
+					<li>
+						<a href="#s14"
+							><span class="num">14.</span> Other Regions'
+							Specific Rights</a
+						>
+					</li>
+					<li>
+						<a href="#s15"
+							><span class="num">15.</span> Updates To This
+							Notice</a
+						>
+					</li>
+					<li>
+						<a href="#s16"
+							><span class="num">16.</span> How To Contact Us</a
+						>
+					</li>
+					<li>
+						<a href="#s17"
+							><span class="num">17.</span> Review, Update, or
+							Delete Your Data</a
+						>
+					</li>
+				</ol>
+			</div>
+
+			<!-- SECTION 1 -->
+			<div class="section" id="s1">
+				<div class="section-header">
+					<span class="section-num">1</span>
+					<h2>What Information Do We Collect?</h2>
+				</div>
+
+				<h3>Personal information you disclose to us</h3>
+				<div class="short-desc">
+					In Short: We collect personal information that you provide
+					to us.
+				</div>
+				<p>
+					We collect personal information that you voluntarily provide
+					to us when you register on the Services, express an interest
+					in obtaining information about us or our products and
+					Services, when you participate in activities on the
+					Services, or otherwise when you contact us.
+				</p>
+				<p>
+					<strong>Personal Information Provided by You.</strong> The
+					personal information we collect may include:
+				</p>
+				<ul>
+					<li>Names</li>
+					<li>Email addresses</li>
+					<li>Usernames</li>
+					<li>Passwords</li>
+				</ul>
+				<p>
+					<strong>Sensitive Information.</strong> We do not process
+					sensitive information.
+				</p>
+				<p>
+					<strong>Payment Data.</strong> We may collect data necessary
+					to process your payment if you choose to make purchases. All
+					payment data is handled and stored by Apple (App Store IAP),
+					Google Play Billing and RevenueCat. Their privacy notices:
+					<a href="https://www.apple.com/legal/privacy/">Apple</a>,
+					<a href="https://policies.google.com/privacy">Google</a>,
+					<a href="https://www.revenuecat.com/privacy">RevenueCat</a>.
+				</p>
+				<p>
+					<strong>Application Data.</strong> If you use our
+					application(s), we may also collect:
+				</p>
+				<ul>
+					<li>
+						<em>Mobile Device Access.</em> We may request access to
+						certain features from your mobile device, including
+						storage. You can change permissions in your device's
+						settings at any time.
+					</li>
+					<li>
+						<em>Mobile Device Data.</em> We automatically collect
+						device information such as your device ID, model,
+						manufacturer, OS version, IP address, browser type, and
+						hardware model.
+					</li>
+				</ul>
+
+				<h3>Information automatically collected</h3>
+				<div class="short-desc">
+					In Short: Some information is collected automatically when
+					you visit our Services.
+				</div>
+				<p>
+					We automatically collect certain information when you visit,
+					use, or navigate the Services. This may include:
+				</p>
+				<ul>
+					<li>
+						<em>Log and Usage Data</em> — IP address, device info,
+						browser type, activity timestamps, pages viewed,
+						searches, and crash reports.
+					</li>
+					<li>
+						<em>Device Data</em> — Computer, phone, tablet, or other
+						device details including OS and configuration.
+					</li>
+					<li>
+						<em>Location Data</em> — Device location (precise or
+						imprecise based on device settings). You may opt out by
+						disabling Location on your device.
+					</li>
+				</ul>
+
+				<h3>Google API</h3>
+				<p>
+					Our use of information received from Google APIs will adhere
+					to the
+					<a
+						href="https://developers.google.com/terms/api-services-user-data-policy"
+						>Google API Services User Data Policy</a
+					>, including the Limited Use requirements.
+				</p>
+			</div>
+
+			<!-- SECTION 2 -->
+			<div class="section" id="s2">
+				<div class="section-header">
+					<span class="section-num">2</span>
+					<h2>How Do We Process Your Information?</h2>
+				</div>
+				<div class="short-desc">
+					In Short: We process your information to provide, improve,
+					and administer our Services, communicate with you, for
+					security and fraud prevention, and to comply with law.
+				</div>
+				<p>
+					We process your personal information for the following
+					purposes:
+				</p>
+				<ul>
+					<li>
+						<strong>Account creation and authentication</strong> —
+						so you can create and log in to your account.
+					</li>
+					<li>
+						<strong>Service delivery</strong> — to provide you with
+						the requested service.
+					</li>
+					<li>
+						<strong>Administrative communications</strong> — to send
+						you details about our products, services, and policy
+						changes.
+					</li>
+					<li>
+						<strong>Targeted advertising</strong> — to develop and
+						display personalized content and advertising tailored to
+						your interests.
+					</li>
+					<li>
+						<strong>Service protection</strong> — fraud monitoring
+						and prevention.
+					</li>
+					<li>
+						<strong>Usage trend analysis</strong> — to better
+						understand how our Services are used.
+					</li>
+					<li>
+						<strong>Vital interests</strong> — when necessary to
+						prevent harm.
+					</li>
+				</ul>
+			</div>
+
+			<!-- SECTION 3 -->
+			<div class="section" id="s3">
+				<div class="section-header">
+					<span class="section-num">3</span>
+					<h2>What Legal Bases Do We Rely On?</h2>
+				</div>
+				<div class="short-desc">
+					In Short: We only process your personal information when we
+					have a valid legal reason to do so.
+				</div>
+
+				<p>
+					<strong>If you are located in the EU or UK:</strong> We rely
+					on the following legal bases under the GDPR and UK GDPR:
+				</p>
+				<ul>
+					<li>
+						<strong>Consent</strong> — where you have given us
+						permission for a specific purpose. You may withdraw
+						consent at any time.
+					</li>
+					<li>
+						<strong>Performance of a Contract</strong> — when
+						necessary to fulfill our contractual obligations to you.
+					</li>
+					<li>
+						<strong>Legitimate Interests</strong> — when reasonably
+						necessary to achieve legitimate business interests, such
+						as personalizing advertising, improving services, and
+						diagnosing problems.
+					</li>
+					<li>
+						<strong>Legal Obligations</strong> — for compliance with
+						laws or legal proceedings.
+					</li>
+					<li>
+						<strong>Vital Interests</strong> — to protect your
+						safety or that of a third party.
+					</li>
+				</ul>
+
+				<p>
+					<strong>If you are located in Canada:</strong> We process
+					information based on your express or implied consent, or in
+					exceptional cases permitted by law (fraud detection, legal
+					obligations, vital interests, etc.).
+				</p>
+			</div>
+
+			<!-- SECTION 4 -->
+			<div class="section" id="s4">
+				<div class="section-header">
+					<span class="section-num">4</span>
+					<h2>
+						When And With Whom Do We Share Your Personal
+						Information?
+					</h2>
+				</div>
+				<div class="short-desc">
+					In Short: We may share information in specific situations
+					and with specific categories of third parties.
+				</div>
+				<p>
+					We may share your data with third-party vendors who perform
+					services for us and require access to your information. They
+					are contractually bound to protect your data and may not use
+					it for any other purpose.
+				</p>
+				<p>Categories of third parties we may share with:</p>
+				<ul>
+					<li>Ad Networks</li>
+					<li>Data Analytics Services</li>
+					<li>Data Storage Service Providers</li>
+					<li>Performance Monitoring Tools</li>
+					<li>Cloud Computing Services</li>
+					<li>
+						User Account Registration &amp; Authentication Services
+					</li>
+					<li>Payment Processors</li>
+				</ul>
+				<p>
+					<strong>Business Transfers.</strong> We may share your
+					information in connection with a merger, sale, financing, or
+					acquisition of all or a portion of our business.
+				</p>
+			</div>
+
+			<!-- SECTION 5 -->
+			<div class="section" id="s5">
+				<div class="section-header">
+					<span class="section-num">5</span>
+					<h2>What Is Our Stance On Third-Party Websites?</h2>
+				</div>
+				<div class="short-desc">
+					In Short: We are not responsible for the safety of any
+					information that you share with third parties that we may
+					link to.
+				</div>
+				<p>
+					The Services may link to third-party websites or contain
+					third-party advertisements. We do not guarantee the safety
+					of any data you provide to such third parties, and any data
+					collected by them is not covered by this Privacy Notice. We
+					encourage you to review the privacy policies of any
+					third-party sites you visit.
+				</p>
+			</div>
+
+			<!-- SECTION 6 -->
+			<div class="section" id="s6">
+				<div class="section-header">
+					<span class="section-num">6</span>
+					<h2>Do We Use Cookies And Other Tracking Technologies?</h2>
+				</div>
+				<div class="short-desc">
+					In Short: We may use cookies and other tracking technologies
+					to collect and store your information.
+				</div>
+				<p>
+					We may use cookies and similar tracking technologies (like
+					web beacons and pixels) to maintain security, prevent
+					crashes, save preferences, and support basic site functions.
+					We also permit third parties to use these technologies for
+					analytics and advertising.
+				</p>
+				<p>
+					If these technologies qualify as a "sale" or "sharing" under
+					applicable US state laws, you may opt out as described in
+					Section 13.
+				</p>
+
+				<h3>Google Analytics</h3>
+				<p>
+					We may use Google Analytics, including features like
+					Remarketing and Demographics/Interests Reporting. You can
+					opt out at
+					<a href="https://tools.google.com/dlpage/gaoptout"
+						>tools.google.com/dlpage/gaoptout</a
+					>
+					or via
+					<a href="https://adssettings.google.com/">Ads Settings</a>.
+				</p>
+			</div>
+
+			<!-- SECTION 7 -->
+			<div class="section" id="s7">
+				<div class="section-header">
+					<span class="section-num">7</span>
+					<h2>Is Your Information Transferred Internationally?</h2>
+				</div>
+				<div class="short-desc">
+					In Short: We may transfer, store, and process your
+					information in countries other than your own.
+				</div>
+				<p>
+					Our servers are located in the United States. If you are
+					located in the EEA, UK, or Switzerland, please be aware that
+					data protection laws in the US may differ from those in your
+					country. We use the European Commission's Standard
+					Contractual Clauses to safeguard your data during transfers.
+				</p>
+			</div>
+
+			<!-- SECTION 8 -->
+			<div class="section" id="s8">
+				<div class="section-header">
+					<span class="section-num">8</span>
+					<h2>How Long Do We Keep Your Information?</h2>
+				</div>
+				<div class="short-desc">
+					In Short: We keep your information for as long as necessary
+					to fulfill the purposes outlined in this notice.
+				</div>
+				<p>
+					We retain your personal information only as long as your
+					account is active, or as required by law. When we no longer
+					have a legitimate need to process your information, we will
+					delete or anonymize it. If deletion is not immediately
+					possible (e.g., backup archives), we will isolate it from
+					further processing until deletion is possible.
+				</p>
+			</div>
+
+			<!-- SECTION 9 -->
+			<div class="section" id="s9">
+				<div class="section-header">
+					<span class="section-num">9</span>
+					<h2>How Do We Keep Your Information Safe?</h2>
+				</div>
+				<div class="short-desc">
+					In Short: We aim to protect your personal information
+					through a system of organizational and technical security
+					measures.
+				</div>
+				<p>
+					We have implemented appropriate technical and organizational
+					security measures. However, no electronic transmission over
+					the Internet can be guaranteed 100% secure. You should only
+					access the Services within a secure environment.
+				</p>
+			</div>
+
+			<!-- SECTION 10 -->
+			<div class="section" id="s10">
+				<div class="section-header">
+					<span class="section-num">10</span>
+					<h2>Do We Collect Information From Minors?</h2>
+				</div>
+				<div class="short-desc">
+					In Short: We do not knowingly collect data from or market to
+					children under 18.
+				</div>
+				<p>
+					We do not knowingly collect or solicit data from children
+					under 18 years of age. By using the Services, you confirm
+					that you are at least 18 years old or that you are a
+					parent/guardian consenting on behalf of a minor. If we learn
+					we have collected information from a minor, we will
+					deactivate the account and delete the data promptly. Contact
+					us at
+					<a href="mailto:emdidistudio@gmail.com"
+						>emdidistudio@gmail.com</a
+					>
+					if you believe we have collected such data.
+				</p>
+			</div>
+
+			<!-- SECTION 11 -->
+			<div class="section" id="s11">
+				<div class="section-header">
+					<span class="section-num">11</span>
+					<h2>What Are Your Privacy Rights?</h2>
+				</div>
+				<div class="short-desc">
+					In Short: Depending on your location, you may have
+					significant rights regarding your personal information.
+				</div>
+				<p>
+					In regions such as the EEA, UK, Switzerland, and Canada, you
+					have rights including:
+				</p>
+				<ul>
+					<li>
+						Request access and a copy of your personal information
+					</li>
+					<li>Request rectification or erasure</li>
+					<li>
+						Restrict the processing of your personal information
+					</li>
+					<li>Data portability</li>
+					<li>Object to automated decision-making</li>
+				</ul>
+				<p>
+					If you are in the EEA or UK and believe we are processing
+					your information unlawfully, you may complain to your
+					<a
+						href="https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm"
+						>Member State data protection authority</a
+					>
+					or the
+					<a
+						href="https://ico.org.uk/make-a-complaint/data-protection-complaints/data-protection-complaints/"
+						>UK data protection authority</a
+					>.
+				</p>
+				<p>
+					<strong>Withdrawing your consent:</strong> You may withdraw
+					consent at any time by contacting us. This does not affect
+					the lawfulness of any processing before withdrawal.
+				</p>
+				<p>
+					<strong>Account Information:</strong> To review, change, or
+					terminate your account, log in to your account settings. We
+					may retain some information to prevent fraud or comply with
+					legal obligations.
+				</p>
+				<p>
+					Questions? Email
+					<a href="mailto:emdidistudio@gmail.com"
+						>emdidistudio@gmail.com</a
+					>.
+				</p>
+			</div>
+
+			<!-- SECTION 12 -->
+			<div class="section" id="s12">
+				<div class="section-header">
+					<span class="section-num">12</span>
+					<h2>Controls For Do-Not-Track Features</h2>
+				</div>
+				<p>
+					Most web browsers include a Do-Not-Track ("DNT") feature.
+					Because no uniform technology standard for recognizing DNT
+					signals has been finalized, we do not currently respond to
+					DNT signals. California law requires us to disclose this. If
+					a standard is adopted in the future, we will update this
+					notice accordingly.
+				</p>
+			</div>
+
+			<!-- SECTION 13 -->
+			<div class="section" id="s13">
+				<div class="section-header">
+					<span class="section-num">13</span>
+					<h2>
+						Do United States Residents Have Specific Privacy Rights?
+					</h2>
+				</div>
+				<div class="short-desc">
+					In Short: If you are a resident of certain US states, you
+					have additional rights regarding your personal information.
+				</div>
+
+				<h3>Categories of Personal Information We Collect</h3>
+				<div class="table-wrap">
+					<table>
+						<thead>
+							<tr>
+								<th>Category</th>
+								<th>Examples</th>
+								<th>Collected</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>A. Identifiers</td>
+								<td>Name, email, IP address, account name</td>
+								<td>
+									<span class="badge badge-yes">Yes</span>
+								</td>
+							</tr>
+							<tr>
+								<td>B. California Customer Records</td>
+								<td>
+									Name, contact info, financial information
+								</td>
+								<td>
+									<span class="badge badge-yes">Yes</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									C. Protected classification characteristics
+								</td>
+								<td>Gender, age, race, ethnicity</td>
+								<td><span class="badge badge-no">No</span></td>
+							</tr>
+							<tr>
+								<td>D. Commercial information</td>
+								<td>Transaction info, purchase history</td>
+								<td>
+									<span class="badge badge-yes">Yes</span>
+								</td>
+							</tr>
+							<tr>
+								<td>E. Biometric information</td>
+								<td>Fingerprints and voiceprints</td>
+								<td><span class="badge badge-no">No</span></td>
+							</tr>
+							<tr>
+								<td>F. Internet/network activity</td>
+								<td>Browsing history, online behavior</td>
+								<td>
+									<span class="badge badge-yes">Yes</span>
+								</td>
+							</tr>
+							<tr>
+								<td>G. Geolocation data</td>
+								<td>Device location</td>
+								<td><span class="badge badge-no">No</span></td>
+							</tr>
+							<tr>
+								<td>H. Audio, electronic, sensory info</td>
+								<td>Images, audio/video recordings</td>
+								<td><span class="badge badge-no">No</span></td>
+							</tr>
+							<tr>
+								<td>I. Professional/employment info</td>
+								<td>Job title, work history</td>
+								<td><span class="badge badge-no">No</span></td>
+							</tr>
+							<tr>
+								<td>J. Education information</td>
+								<td>Student records</td>
+								<td><span class="badge badge-no">No</span></td>
+							</tr>
+							<tr>
+								<td>K. Inferences from personal info</td>
+								<td>Profiles of preferences/characteristics</td>
+								<td>
+									<span class="badge badge-yes">Yes</span>
+								</td>
+							</tr>
+							<tr>
+								<td>L. Sensitive personal information</td>
+								<td>—</td>
+								<td><span class="badge badge-no">No</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<h3>Your Rights</h3>
+				<ul>
+					<li>
+						<strong>Right to know</strong> whether we are processing
+						your personal data
+					</li>
+					<li><strong>Right to access</strong> your personal data</li>
+					<li><strong>Right to correct</strong> inaccuracies</li>
+					<li>
+						<strong>Right to request deletion</strong> of your
+						personal data
+					</li>
+					<li>
+						<strong>Right to obtain a copy</strong> of personal data
+						you previously shared
+					</li>
+					<li>
+						<strong>Right to non-discrimination</strong> for
+						exercising your rights
+					</li>
+					<li>
+						<strong>Right to opt out</strong> of targeted
+						advertising, data sales, or profiling
+					</li>
+				</ul>
+
+				<h3>How to Exercise Your Rights</h3>
+				<p>
+					Email us at
+					<a href="mailto:emdidistudio@gmail.com"
+						>emdidistudio@gmail.com</a
+					>.
+				</p>
+
+				<h3>California "Shine The Light" Law</h3>
+				<p>
+					California residents may request once per year, free of
+					charge, information about personal information disclosed to
+					third parties for direct marketing. Submit your request in
+					writing using the contact details in Section 16.
+				</p>
+			</div>
+
+			<!-- SECTION 14 -->
+			<div class="section" id="s14">
+				<div class="section-header">
+					<span class="section-num">14</span>
+					<h2>Do Other Regions Have Specific Privacy Rights?</h2>
+				</div>
+				<div class="short-desc">
+					In Short: You may have additional rights based on the
+					country you reside in.
+				</div>
+
+				<h3>Australia and New Zealand</h3>
+				<p>
+					We process your information under Australia's Privacy Act
+					1988 and New Zealand's Privacy Act 2020. You have the right
+					to access or correct your personal information at any time.
+					To file a complaint:
+					<a
+						href="https://www.oaic.gov.au/privacy/privacy-complaints/lodge-a-privacy-complaint-with-us"
+						>Office of the Australian Information Commissioner</a
+					>
+					or
+					<a
+						href="https://www.privacy.org.nz/your-rights/making-a-complaint/"
+						>Office of New Zealand Privacy Commissioner</a
+					>.
+				</p>
+
+				<h3>Republic of South Africa</h3>
+				<p>
+					You have the right to access or correct your personal
+					information. If unsatisfied with how we handle a complaint,
+					contact the
+					<a href="https://inforegulator.org.za/"
+						>Information Regulator (South Africa)</a
+					>
+					at
+					<a href="mailto:enquiries@inforegulator.org.za"
+						>enquiries@inforegulator.org.za</a
+					>.
+				</p>
+			</div>
+
+			<!-- SECTION 15 -->
+			<div class="section" id="s15">
+				<div class="section-header">
+					<span class="section-num">15</span>
+					<h2>Do We Make Updates To This Notice?</h2>
+				</div>
+				<div class="short-desc">
+					In Short: Yes, we will update this notice as necessary to
+					stay compliant with relevant laws.
+				</div>
+				<p>
+					We may update this Privacy Notice from time to time. The
+					updated version will be indicated by an updated date at the
+					top of this notice. We encourage you to review it frequently
+					to stay informed.
+				</p>
+			</div>
+
+			<!-- SECTION 16 -->
+			<div class="section" id="s16">
+				<div class="section-header">
+					<span class="section-num">16</span>
+					<h2>How Can You Contact Us About This Notice?</h2>
+				</div>
+				<p>
+					If you have questions or comments about this notice, you may
+					email us at
+					<a href="mailto:emdidistudio@gmail.com"
+						>emdidistudio@gmail.com</a
+					>
+					<!-- or contact us by post at: -->
+				</p>
+				<!-- <p
+					style="
+						margin-top: 1rem;
+						padding: 1rem 1.5rem;
+						background: var(--highlight);
+						border-left: 3px solid var(--accent);
+						font-style: italic;
+					"
+				>
+					Emdidi Studio<br />
+					<em>(Mailing address not yet listed)</em>
+				</p> -->
+			</div>
+
+			<!-- SECTION 17 -->
+			<div class="section" id="s17">
+				<div class="section-header">
+					<span class="section-num">17</span>
+					<h2>
+						How Can You Review, Update, Or Delete The Data We
+						Collect From You?
+					</h2>
+				</div>
+				<p>
+					Based on the applicable laws of your country or state of
+					residence, you may have the right to request access to,
+					correct, or delete your personal information. To do so,
+					please send an email
+					<a href="mailto:emdidistudio@gmail.com"
+						>emdidistudio@gmail.com</a
+					>.
+				</p>
+			</div>
+		</main>
+
+		<footer>
+			<p class="studio">Emdidi Studio</p>
+			<p>
+				Questions?
+				<a href="mailto:emdidistudio@gmail.com"
+					>emdidistudio@gmail.com</a
+				>
+			</p>
+			<p style="margin-top: 1rem; font-size: 0.72rem; opacity: 0.4">
+				Privacy Policy · Last Updated April 15, 2026
+			</p>
+		</footer>
+
+		<button
+			class="back-top"
+			id="backTop"
+			onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+			aria-label="Back to top"
+		>
+			↑
+		</button>
+
+		<script>
+			const btn = document.getElementById("backTop");
+			window.addEventListener("scroll", () => {
+				btn.classList.toggle("visible", window.scrollY > 400);
+			});
+		</script>
+	</body>
+</html>
